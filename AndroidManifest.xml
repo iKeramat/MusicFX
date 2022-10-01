@@ -90,6 +90,18 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ActivityMusic"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:label="@string/eq_dialog_title">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.sound" />
+        </activity>
 
     </application>
 </manifest>
