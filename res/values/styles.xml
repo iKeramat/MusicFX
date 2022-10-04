@@ -16,6 +16,6 @@
 
 <resources>
 
-    <style name="Theme.Material" parent="android:style/Theme.Material" />
+    <style name="Theme.Material" parent="android:style/Theme.Material.Light" />
 
 </resources>
