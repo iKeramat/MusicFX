@@ -16,6 +16,8 @@
 
 <resources>
 
-    <style name="Theme.Material" parent="android:style/Theme.Material.Light" />
+    <style name="Theme.Material" parent="Theme.AppCompat.DayNight">
+        <item name="colorAccent"></item>
+    </style>
 
 </resources>

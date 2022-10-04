@@ -18,18 +18,9 @@ package com.android.musicfx;
 
 import com.android.audiofx.OpenSLESConstants;
 
-import android.app.ActionBar;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.bluetooth.BluetoothClass;
-import android.bluetooth.BluetoothDevice;
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.media.AudioAttributes;
 import android.media.AudioDeviceInfo;
 import android.media.AudioFormat;
@@ -42,10 +33,8 @@ import android.media.audiofx.Virtualizer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -53,15 +42,16 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.ActionBar;
+
+import com.android.audiofx.OpenSLESConstants;
 
 import java.util.Formatter;
 import java.util.HashMap;
@@ -70,7 +60,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
-import java.util.UUID;
 
 /**
  *
@@ -488,15 +477,16 @@ public class ActivityMusic extends Activity implements OnSeekBarChangeListener {
                 reverbSpinnerInit((Spinner)findViewById(R.id.prSpinner));
             }
 
-            ActionBar ab = getActionBar();
+            //ActionBar ab = getActionBar();
             final int padding = getResources().getDimensionPixelSize(
                     R.dimen.action_bar_switch_padding);
             mToggleSwitch.setPadding(0,0, padding, 0);
-            ab.setCustomView(mToggleSwitch, new ActionBar.LayoutParams(
+            //ab.setCustomView(mToggleSwitch,
+            new ActionBar.LayoutParams(
                     ActionBar.LayoutParams.WRAP_CONTENT,
                     ActionBar.LayoutParams.WRAP_CONTENT,
-                    Gravity.CENTER_VERTICAL | Gravity.RIGHT));
-            ab.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_SHOW_CUSTOM);
+                    Gravity.CENTER_VERTICAL | Gravity.RIGHT);
+            //ab.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_SHOW_CUSTOM);
         } else {
             viewGroup.setVisibility(View.GONE);
             ((TextView) findViewById(R.id.noEffectsTextView)).setVisibility(View.VISIBLE);
