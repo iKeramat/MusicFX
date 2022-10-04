@@ -111,6 +111,7 @@ public class ActivityMusic extends Activity implements OnSeekBarChangeListener {
      */
     private boolean mPresetReverbSupported;
 
+
     // Equalizer fields
     private final SeekBar[] mEqualizerSeekBar = new SeekBar[EQUALIZER_MAX_BANDS];
     private int mNumberEqualizerBands;
@@ -244,7 +245,7 @@ public class ActivityMusic extends Activity implements OnSeekBarChangeListener {
 
     private static boolean isHeadsetUsedForMedia(List<AudioPlaybackConfiguration> configs) {
         for (AudioPlaybackConfiguration config : configs) {
-            if (config.isActive() && isConfigForMedia(config) && isConfigForHeadset(config)) {
+            if (isConfigForMedia(config) && isConfigForHeadset(config)) {
                 return true;
             }
         }

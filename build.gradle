@@ -1,0 +1,59 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.3'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdk 32
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    defaultConfig {
+        versionCode 10400
+        versionName '1.4'
+
+        minSdk 24
+        targetSdk 32
+
+        signingConfig signingConfigs.debug
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+
+            aidl.srcDirs = ['src']
+            assets.srcDirs = ['assets']
+            java.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            resources.srcDirs = ['res']
+        }
+    }
+}
+
+dependencies {
+    // add dependencies here
+    compileOnly fileTree(dir: 'app/system_libs/', include: ['framework.jar'])
+    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation "androidx.gridlayout:gridlayout:1.0.0"
+
+}
